@@ -6,7 +6,7 @@ import (
 	"k8s.io/client-go/kubernetes"
 )
 
-func Pod(c *kubernetes.Clientset, namespace string) (corev1.PodList, error) {
+func Pod(c *kubernetes.Clientset, namespace string) (*corev1.PodList, error) {
 	/*
 	// c.CoreV1().ComponentStatuses()
 	c.CoreV1().ConfigMaps()
@@ -36,7 +36,7 @@ func Endpoints(c *kubernetes.Clientset, namespace string) (corev1.EndpointsList,
 }
 
 func LimitRanges(c *kubernetes.Clientset, namespace string) (corev1.LimitRangesList, error) {
-	return c.CoreV1().LimitRanges(namespace string).List(metav1.ListOptions{})
+	return c.CoreV1().LimitRanges(namespace).List(metav1.ListOptions{})
 }
 
 func PersistentVolumeClaim(c *kubernetes.Clientset, namespace string)(corev1.PersistentVolumeClaimList, error) {

@@ -3,7 +3,7 @@ package resources
 import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/client-go/kubernetes"
-	v1beta1 "k8s.io/api/extensions/v1beta1",
+	v1beta1 "k8s.io/api/extensions/v1beta1"
 )
 
 func Deployments(c *kubernetes.Clientset, namespace string) (v1beta1.Deployments, error) {
