@@ -1,4 +1,4 @@
-module kube-res
+module github.com/xuyun-io/kube-res
 
 go 1.12
 
