@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"flag"
 	"path/filepath"
-	"github.com/xuyun-io/kube-res/resources"
+	"github.com/xuyun-io/kube-res/main/resources"
 
 	"github.com/mlycore/log"
 	corev1 "k8s.io/api/core/v1"
