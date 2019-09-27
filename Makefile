@@ -1,4 +1,4 @@
 build:
-	git@github.com:xuyun-io/kube-res.git
+	go build -o bin/demo main/demo.go	
 clean:
 	rm -rf bin
