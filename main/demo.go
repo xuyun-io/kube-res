@@ -1,25 +1,32 @@
 package main
 
 import (
+	"fmt"
 	"flag"
 	"path/filepath"
+	"github.com/mlycore/kube-res/resources"
 
 	"github.com/mlycore/log"
 	corev1 "k8s.io/api/core/v1"
-        metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
+    metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/client-go/kubernetes"
 	"k8s.io/client-go/rest"
-        "k8s.io/client-go/util/homedir"
-        "k8s.io/client-go/tools/clientcmd"
+    "k8s.io/client-go/util/homedir"
+    "k8s.io/client-go/tools/clientcmd"
+)
+
+const (
+	testns = "observability"
 )
 
 func main() {
 	c := KubernetesClientset()
-	list := c.ListPod("kube-system").Items
-	for _, p := range list {
-		log.Infof("%s", p.Name)
-	}
 	log.Infof("this is a log")
+	if list, err := resources.Pod(testns); err == nil {
+		for _, p := range list.Items{
+			fmt.Printf("pod/%s/%s\n", p.Namespace, p.Name)		
+		}
+	}
 }
 
 // Client is built upon the real Kubernetes client-go
@@ -50,22 +57,4 @@ func KubernetesClientset() *Client {
 		Config:    config,
 		Clientset: clientset,
 	}
-}
-
-func (c *Client) ListPod(namespace string) *corev1.PodList {
-	podlist, err := c.CoreV1().Pods(namespace).List(metav1.ListOptions{})
-	if err != nil {
-		log.Errorf("list pod error: %s", err)
-		return nil
-	}
-	return podlist
-}
-
-func (c *Client) GetPod(namespace, podName string) *corev1.Pod {
-	pod, err := c.CoreV1().Pods(namespace).Get(podName, metav1.GetOptions{})
-	if err != nil {
-		log.Errorf("get pod error: %s", err)
-		return nil
-	}
-	return pod
 }
