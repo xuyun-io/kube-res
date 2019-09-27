@@ -1,4 +1,4 @@
-module go-example
+module kube-res
 
 go 1.12
 
