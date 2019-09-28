@@ -1,4 +1,4 @@
-package resources
+package extensionsv1beta1 
 
 import (
 	v1beta1 "k8s.io/api/extensions/v1beta1"
