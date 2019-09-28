@@ -5,7 +5,7 @@ import (
 )
 
 const (
-	template = "%-20s%-16s%-16s%-20s\n"
+	template = "%-20s%-22s%-16s%-20s\n"
 )
 
 func PrintHeader() {

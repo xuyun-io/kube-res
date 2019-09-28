@@ -1,3 +1,4 @@
+
 |:-:|:-:|:-:|
 |corev1| ConfigMap| √ |
 |corev1| Endpoints| √ |
@@ -19,3 +20,8 @@
 |extensionsv1beta1| NetworkPolicy| √ |
 |extensionsv1beta1| PodSecurityPolicy| √ |
 |extensionsv1beta1| ReplicaSets| √ |
+
+|appsv1| Deployment| √ |
+|appsv1| DaemonSet| √ |
+|appsv1| ReplicaSets| √ |
+|appsv1| StatefulSets| √ |
