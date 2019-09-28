@@ -1,4 +1,4 @@
 build:
-	go build -o bin/demo main/demo.go	
+	go build -o bin/res main/res.go	
 clean:
 	rm -rf bin
