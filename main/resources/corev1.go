@@ -27,42 +27,42 @@ func Pod(c *kubernetes.Clientset, namespace string) (*corev1.PodList, error) {
 	return c.CoreV1().Pods(namespace).List(metav1.ListOptions{})
 }
 
-func ConfigMaps(c *kubernetes.Clientset, namespace string) (corev1.ConfigMapsList, error) {
+func ConfigMaps(c *kubernetes.Clientset, namespace string) (*corev1.ConfigMapList, error) {
 	return c.CoreV1().ConfigMaps(namespace).List(metav1.ListOptions{})
 }
 
-func Endpoints(c *kubernetes.Clientset, namespace string) (corev1.EndpointsList, error) {
+func Endpoints(c *kubernetes.Clientset, namespace string) (*corev1.EndpointsList, error) {
 	return c.CoreV1().Endpoints(namespace).List(metav1.ListOptions{})
 }
 
-func LimitRanges(c *kubernetes.Clientset, namespace string) (corev1.LimitRangesList, error) {
+func LimitRanges(c *kubernetes.Clientset, namespace string) (*corev1.LimitRangeList, error) {
 	return c.CoreV1().LimitRanges(namespace).List(metav1.ListOptions{})
 }
 
-func PersistentVolumeClaim(c *kubernetes.Clientset, namespace string) (corev1.PersistentVolumeClaimList, error) {
+func PersistentVolumeClaim(c *kubernetes.Clientset, namespace string) (*corev1.PersistentVolumeClaimList, error) {
 	return c.CoreV1().PersistentVolumeClaims(namespace).List(metav1.ListOptions{})
 }
 
-func PersistentVolumes(c *kubernetes.Clientset, namespace string) (corev1.PersistentVolumeList, error) {
+func PersistentVolumes(c *kubernetes.Clientset, namespace string) (*corev1.PersistentVolumeList, error) {
 	return c.CoreV1().PersistentVolumes().List(metav1.ListOptions{})
 }
 
-func ReplicationControllers(c *kubernetes.Clientset, namespace string) (corev1.ReplicationControllerList, error) {
+func ReplicationControllers(c *kubernetes.Clientset, namespace string) (*corev1.ReplicationControllerList, error) {
 	return c.CoreV1().ReplicationControllers(namespace).List(metav1.ListOptions{})
 }
 
-func ResourceQuotas(c *kubernetes.Clientset, namespace string) (corev1.ResourceQuotaList, error) {
+func ResourceQuotas(c *kubernetes.Clientset, namespace string) (*corev1.ResourceQuotaList, error) {
 	return c.CoreV1().ResourceQuotas(namespace).List(metav1.ListOptions{})
 }
 
-func Secrets(c *kubernetes.Clientset, namespace string) (corev1.SecretList, error) {
+func Secrets(c *kubernetes.Clientset, namespace string) (*corev1.SecretList, error) {
 	return c.CoreV1().Secrets(namespace).List(metav1.ListOptions{})
 }
 
-func ServiceAccounts(c *kubernetes.Clientset, namespace string) (corev1.ServiceAccountList, error) {
+func ServiceAccounts(c *kubernetes.Clientset, namespace string) (*corev1.ServiceAccountList, error) {
 	return c.CoreV1().ServiceAccounts(namespace).List(metav1.ListOptions{})
 }
 
-func Services(c *kubernetes.Clientset, namespace string) (corev1.ServiceList, error) {
+func Services(c *kubernetes.Clientset, namespace string) (*corev1.ServiceList, error) {
 	return c.CoreV1().Services(namespace).List(metav1.ListOptions{})
 }

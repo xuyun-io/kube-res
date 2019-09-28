@@ -1,18 +1,17 @@
 package main
 
 import (
-	"fmt"
 	"flag"
+	"fmt"
 	"path/filepath"
+
 	"github.com/xuyun-io/kube-res/main/resources"
 
 	"github.com/mlycore/log"
-	corev1 "k8s.io/api/core/v1"
-    metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/client-go/kubernetes"
 	"k8s.io/client-go/rest"
-    "k8s.io/client-go/util/homedir"
-    "k8s.io/client-go/tools/clientcmd"
+	"k8s.io/client-go/tools/clientcmd"
+	"k8s.io/client-go/util/homedir"
 )
 
 const (
@@ -22,9 +21,9 @@ const (
 func main() {
 	c := KubernetesClientset()
 	log.Infof("this is a log")
-	if list, err := resources.Pod(testns); err == nil {
-		for _, p := range list.Items{
-			fmt.Printf("pod/%s/%s\n", p.Namespace, p.Name)		
+	if list, err := resources.Pod(c.Clientset, testns); err == nil {
+		for _, p := range list.Items {
+			fmt.Printf("pod/%s/%s\n", p.Namespace, p.Name)
 		}
 	}
 }
