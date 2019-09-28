@@ -1,0 +1,10 @@
+name: "res"                 # 必填项: 用于 kuebctl 调用的插件名称
+shortDesc: "Show all resources."    # 必填项: 用于 help 该插件时的简短描述
+longDesc: "Show all resources in specific namespace."                      # 非必填: 插件的长描述
+example: "kubectl res list -n kube-system"                       # 非必填: 插件的使用样例
+command: "./res"             # 必填项: 插件实际执行的文件位置，可以相对路径 or 绝对路径，或者在 PATH 里也行
+flags:                            # 非必填: 插件支持的 flag
+  - name: "namespace"                  # 必填项: 如果你写了支持的 flag，那么此项必填
+    shorthand: "n"                # 非必填: 该选项的缩短形式
+    desc: "Set namespace"             # 必填项: 同样每个 flag 都必须书写描述
+    defValue: "default"           # 非必填: 默认值
