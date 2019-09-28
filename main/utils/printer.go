@@ -13,6 +13,10 @@ func PrintHeader() {
 
 }
 
+func Printline() {
+	fmt.Printf("\n======\n\n")
+}
+
 func Print(apiversion, resourcetype, namespace, name string) {
 	fmt.Printf(template, apiversion, resourcetype, namespace, name)
 }

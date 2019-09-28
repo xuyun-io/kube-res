@@ -88,6 +88,8 @@ func main() {
 		}
 	}
 
+	utils.Printline()
+
 	if list, err := extensionsv1beta1.Deployments(c.Clientset, namespace); err == nil {
 		for _, dp := range list.Items {
 			utils.Print("extensions/v1beta1", "Deployment", dp.Namespace, dp.Name)
@@ -105,6 +107,8 @@ func main() {
 			utils.Print("extensions/v1beta1", "ReplicaSet", dp.Namespace, dp.Name)
 		}
 	}
+
+	utils.Printline()
 
 	if list, err := appsv1.StatefulSets(c.Clientset, namespace); err == nil {
 		for _, dp := range list.Items {
